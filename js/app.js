@@ -4,21 +4,25 @@
 let board, player
 
 /*------------------------ Cached Element References ------------------------*/
-const circle = document.querySelectorAll('#board > div')
+const circle = document.querySelectorAll('section > div')
 const topMessage = document.querySelector('#message')
-console.log(circle)
 const resetButton = document.querySelector('#reset')
 
 /*----------------------------- Event Listeners -----------------------------*/
-
+// circle.addEventListener('click')
 
 
 /*-------------------------------- Functions --------------------------------*/
 
+init()
 
+function init() {
+  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+  console.log(board)
+  player = 1
+  render()
+}
 
-// Define the Variable in order to track the state of the game
-// Make sure to add cached elements for an ID that covers all the divs, a reset button function 
 // Need event listeners for click, reset, (computer-mode at the end)
 // Initialize an init function, put a const of board with 42 nulls
 // Game needs to be rendered to user
