@@ -72,7 +72,7 @@ const winningArrays = [
   [13, 20, 27, 34],
 ]
 /*---------------------------- Variables (state) ----------------------------*/
-let board, playerOne, playerTwo, winner, turn
+let board = Array(42).fill(null), winner, turn, tie
 
 /*------------------------ Cached Element References ------------------------*/
 const circleSpace = document.querySelectorAll('section > div')
@@ -91,13 +91,11 @@ reset.addEventListener('click', init)
 init()
 
 function init() {
-  board = [Array(42).fill(null)]
-  // console.log(board)
-  playerOne = "R"
-  playerTwo = "Y"
+  board.fill(null)
   winner = false
-  turn = playerOne
-  // render()
+  tie = false
+  turn = 1
+  render()
 }
 
 
@@ -108,13 +106,38 @@ function handleClick(index) {
   render()
 }
 
-function getWinner(){
-  for (let i = 0; i < winningArrays.length; i++) {
-    const circleSpace1 = circleSpace[winningArrays[i][0]]
-    const circleSpace2 = circleSpace[winningArrays[i][1]]
-    const circleSpace3 = circleSpace[winningArrays[i][2]]
-    const circleSpace4 = circleSpace[winningArrays[i][3]]
+function checkIfWinner() {
+    winner = winningArrays.some(combo => Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]) === 4 )
+}
+
+function checkIfTie() {
+  if (!board.includes(null)) tie = true
+}
+
+function switchPlayerTurn() {
+  if (!winner) turn *= -1
+}
+
+function updateBoard() {
+  for (let index in board) {
+      if (board[index] === 1) circleSpace[index].innerText = 'X'
+      if (board[index] === -1) circleSpace[index].innerText = 'O'
+      if (!board[index]) circleSpace[index].innerText = ''
   }
+}
+
+function updateMessage() {
+  topMessage.innerText = `It's ${turn > 0 ? 'X' : 'O'}'s turn`
+  if (tie) topMessage.innerText = `Tie game`
+  if (winner) topMessage.innerText = `${turn > 0 ? 'X' : 'O'} wins`
+}
+
+function render() {
+  checkIfTie()
+  checkIfWinner()
+  switchPlayerTurn()
+  updateBoard()
+  updateMessage()
 }
 
   // board.forEach((circle, sqIdx) => {
