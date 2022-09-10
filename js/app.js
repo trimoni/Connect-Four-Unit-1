@@ -120,8 +120,10 @@ function switchPlayerTurn() {
 
 function updateBoard() {
   for (let index in board) {
-      if (board[index] === 1) circleSpace[index].className = '.red-piece'
+      if (board[index] === 1) circleSpace[index].innerText = 'Red'
+      circleSpace[index].style.backgroundColor = 'Red'
       if (board[index] === -1) circleSpace[index].innerText = 'Yellow'
+      circleSpace[index].style.backgroundColor = 'Yellow'
       if (!board[index]) circleSpace[index].innerText = ''
   }
 }

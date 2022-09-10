@@ -35,11 +35,11 @@ body {
   display: flex;
 }
 
-.red-piece {
+#red-piece {
   background-color: red;
 }
 
-.yellow-piece {
+#yellow-piece {
   background-color: yellow;
 }
 
