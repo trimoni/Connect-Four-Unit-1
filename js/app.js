@@ -120,16 +120,16 @@ function switchPlayerTurn() {
 
 function updateBoard() {
   for (let index in board) {
-      if (board[index] === 1) circleSpace[index].innerText = 'X'
-      if (board[index] === -1) circleSpace[index].innerText = 'O'
+      if (board[index] === 1) circleSpace[index].className = '.red-piece'
+      if (board[index] === -1) circleSpace[index].innerText = 'Yellow'
       if (!board[index]) circleSpace[index].innerText = ''
   }
 }
 
 function updateMessage() {
-  topMessage.innerText = `It's ${turn > 0 ? 'X' : 'O'}'s turn`
+  topMessage.innerText = `It's ${turn > 0 ? 'Red' : 'Yellow'}'s turn`
   if (tie) topMessage.innerText = `Tie game`
-  if (winner) topMessage.innerText = `${turn > 0 ? 'X' : 'O'} wins`
+  if (winner) topMessage.innerText = `${turn > 0 ? 'Red' : 'Yellow'} wins`
 }
 
 function render() {
