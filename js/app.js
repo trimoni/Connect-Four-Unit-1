@@ -76,18 +76,14 @@ let board, playerOne, playerTwo, winner, turn
 
 /*------------------------ Cached Element References ------------------------*/
 const circleSpace = document.querySelectorAll('section > div')
-// console.log(circleSpace)
+console.log(circleSpace)
 const topMessage = document.querySelector('#message')
-const resetButton = document.querySelector('#reset')
+const reset = document.querySelector('#reset')
 
 /*----------------------------- Event Listeners -----------------------------*/
-// circleSpace.forEach(function(round) {
-//   round.addEventListener('click', handleClick)
-// })
+circleSpace.forEach((circle, index) => circle.addEventListener('click', () => handleClick(index)))
 
-// circleSpace.addEventListener('click', render)
-
-resetButton.addEventListener('click', init)
+reset.addEventListener('click', init)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -95,8 +91,8 @@ resetButton.addEventListener('click', init)
 init()
 
 function init() {
-  board = []
-  console.log(board)
+  board = [Array(42).fill(null)]
+  // console.log(board)
   playerOne = "R"
   playerTwo = "Y"
   winner = false
@@ -104,14 +100,12 @@ function init() {
   // render()
 }
 
-// function render() {
-//   board.forEach((circle, index) => {
-//     if(circle === )
-//   });
-// }
 
-function handleClick() {
-  
+function handleClick(index) {
+  const circleIsFull = board[index] !== null
+  if (circleIsFull || winner) return
+  board[index] = turn
+  render()
 }
 
 function getWinner(){
