@@ -78,8 +78,7 @@ let board = Array(42).fill(null), winner, turn, tie
 const circleSpace = document.querySelectorAll('section > div')
 console.log(circleSpace)
 const topMessage = document.querySelector('#message')
-const reset = document.querySelector('#reset')
-
+let reset = document.getElementById("reset")
 /*----------------------------- Event Listeners -----------------------------*/
 circleSpace.forEach((circle, index) => circle.addEventListener('click', () => handleClick(index)))
 
@@ -94,8 +93,9 @@ function init() {
   board.fill(null)
   winner = false
   tie = false
-  turn = 1
+  turn = -1
   render()
+  reset = false
 }
 
 
@@ -121,10 +121,8 @@ function switchPlayerTurn() {
 function updateBoard() {
   for (let index in board) {
       if (board[index] === 1) circleSpace[index].style.backgroundColor = 'Red'
-      // circleSpace[index].style.backgroundColor = 'Red'
       if (board[index] === -1) circleSpace[index].style.backgroundColor = 'Yellow'
-      // circleSpace[index].style.backgroundColor = 'Yellow'
-      if (!board[index]) circleSpace[index].innerText = ''
+      if (!board[index] === null) circleSpace[index].innerText = ''
   }
 }
 
@@ -132,6 +130,18 @@ function updateMessage() {
   topMessage.innerText = `It's ${turn > 0 ? 'Red' : 'Yellow'}'s turn`
   if (tie) topMessage.innerText = `Tie game`
   if (winner) topMessage.innerText = `${turn > 0 ? 'Red' : 'Yellow'} wins`
+}
+
+function resetBoard() {
+  let buttonId
+  for (let i = 1; i < circleSpace.length; i++) {
+    buttonId = 'circle' + i
+    document.querySelector('#reset').value = ''
+  }
+
+  circleSpace = []
+
+  winner = false
 }
 
 function render() {
