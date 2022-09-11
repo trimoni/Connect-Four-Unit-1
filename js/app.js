@@ -78,11 +78,15 @@ let board = Array(42).fill(null), winner, turn, tie
 const circleSpace = document.querySelectorAll('section > div')
 console.log(circleSpace)
 const topMessage = document.querySelector('#message')
-let reset = document.getElementById("reset")
+const reset = document.getElementById("resetBtn")
 /*----------------------------- Event Listeners -----------------------------*/
 circleSpace.forEach((circle, index) => circle.addEventListener('click', () => handleClick(index)))
 
+
 reset.addEventListener('click', init)
+// reset.addEventListener('click', () => {
+//   circleSpace.forEach(input => input.remove = '')
+// })
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -95,15 +99,14 @@ function init() {
   tie = false
   turn = -1
   render()
-  reset = false
 }
 
 
 function handleClick(index) {
   const circleIsFull = board[index] !== null
-  if (circleIsFull || winner) return
+  if ( winner) return
   board[index] = turn
-  render()
+  render(index)
 }
 
 function checkIfWinner() {
@@ -118,12 +121,26 @@ function switchPlayerTurn() {
   if (!winner) turn *= -1
 }
 
-function updateBoard() {
-  for (let index in board) {
-      if (board[index] === 1) circleSpace[index].style.backgroundColor = 'Red'
-      if (board[index] === -1) circleSpace[index].style.backgroundColor = 'Yellow'
-      if (!board[index] === null) circleSpace[index].innerText = ''
-  }
+function bottomUp() {
+  let bottom = document.querySelectorAll('.bottom')
+  
+}
+
+function updateBoard(index) {
+  // for (let index in board) {
+    // console.log(index)
+      // if (board[index] === 1) circleSpace[index].style.backgroundColor = 'Red'
+      // else if (board[index] === -1) circleSpace[index].style.backgroundColor = 'Yellow'
+      // else if (board[index] === null)
+      // circleSpace[index].style.backgroundColor = 'White'
+      console.log(board)
+      // }
+      // circleSpace[index].style.backgroundColor = 'red'
+ 
+      const backgroundColor = turn === 1 ? "red" : "yellow"
+      let circle = document.querySelector(`#sq${index}`)
+      circle.style.backgroundColor = backgroundColor
+      console.log(turn)
 }
 
 function updateMessage() {
@@ -132,24 +149,36 @@ function updateMessage() {
   if (winner) topMessage.innerText = `${turn > 0 ? 'Red' : 'Yellow'} wins`
 }
 
-function resetBoard() {
-  let buttonId
-  for (let i = 1; i < circleSpace.length; i++) {
-    buttonId = 'circle' + i
-    document.querySelector('#reset').value = ''
-  }
+function render(par) {
+//  console.log(par % 7)
 
-  circleSpace = []
+  const magicArray  = [6,5,4,3,2,1,0]
+// this targets the bottom rom
+  let classIndex = magicArray[par%7]
+  let boot = document.querySelector(`#sq${classIndex}`)
+  // the bottom row, each value is getting a divisible of 7
+  let color = boot.style.backgroundColor
+  while (color === "red" ||  color === "yellow"){
+    // grabbing the sq id's in the bottom row
+    // console.log(boot.style.backgroundColor)
+    
+    classIndex += 7
+    boot = document.querySelector(`#sq${classIndex}`)
+    color = boot.style.backgroundColor
 
-  winner = false
+    console.log(document.querySelector(`#sq${classIndex}`))
+  
 }
+  console.log(color)
+  
+  
 
-function render() {
   checkIfTie()
   checkIfWinner()
   switchPlayerTurn()
-  updateBoard()
+  updateBoard(classIndex)
   updateMessage()
+  bottomUp()
 }
 
   // board.forEach((circle, sqIdx) => {
