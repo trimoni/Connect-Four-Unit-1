@@ -31,8 +31,8 @@ body {
   border-radius: 50%;
 }
 
-#reset {
-  display: flex;
+#resetBtn {
+  margin: 0 auto;
 }
 
 
