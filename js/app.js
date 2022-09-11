@@ -163,6 +163,7 @@ function updateMessage() {
 
 function render(index) {
   const classIndex = getClassIndex(index);
+
   updateBoard(classIndex);
   checkIfTie();
   checkIfWinner();
