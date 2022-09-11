@@ -97,15 +97,16 @@ function init() {
   board.fill(null)
   winner = false
   tie = false
-  turn = -1
-  render()
+  turn = 1
+  for (let i = 0; i < circleSpace.length; i++) {
+    circleSpace[i].style.backgroundColor = 'white'
+  }
+  updateMessage()
 }
 
 
 function handleClick(index) {
-  const circleIsFull = board[index] !== null
   if ( winner) return
-  board[index] = turn
   render(index)
 }
 
@@ -121,12 +122,9 @@ function switchPlayerTurn() {
   if (!winner) turn *= -1
 }
 
-function bottomUp() {
-  let bottom = document.querySelectorAll('.bottom')
-  
-}
-
 function updateBoard(index) {
+  board[index] = turn
+
   // for (let index in board) {
     // console.log(index)
       // if (board[index] === 1) circleSpace[index].style.backgroundColor = 'Red'
@@ -144,10 +142,11 @@ function updateBoard(index) {
 }
 
 function updateMessage() {
-  topMessage.innerText = `It's ${turn > 0 ? 'Red' : 'Yellow'}'s turn`
+  topMessage.innerText = `It's ${turn > 0 ? 'Red' : 'Yellow'}s turn`
   if (tie) topMessage.innerText = `Tie game`
   if (winner) topMessage.innerText = `${turn > 0 ? 'Red' : 'Yellow'} wins`
 }
+
 
 function render(par) {
 //  console.log(par % 7)
@@ -173,12 +172,11 @@ function render(par) {
   
   
 
+  updateBoard(classIndex)
   checkIfTie()
   checkIfWinner()
   switchPlayerTurn()
-  updateBoard(classIndex)
   updateMessage()
-  bottomUp()
 }
 
   // board.forEach((circle, sqIdx) => {
