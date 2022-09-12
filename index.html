@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,6 +21,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
     <script defer src="/js/app.js"></script>
     <title>Connect Four</title>
   </head>
@@ -31,7 +46,7 @@
       <span style="--i: 13">R</span>
       <span style="--i: 14">🟡</span>
     </div>
-    <h2 id="message"></h2>
+    <h2 class="animate__animated animate__bounce" id="message"></h2>
     <section id="board">
       <div id="sq41"></div>
       <div id="sq40"></div>
@@ -77,7 +92,9 @@
       <div id="sq0"></div>
     </section>
     <div>
-      <button id="resetBtn" type="reset" value="reset">Reset</button>
+      <button id="resetBtn" class="btn btn-info" type="reset" value="reset">
+        Reset
+      </button>
     </div>
   </body>
 </html>

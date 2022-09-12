@@ -59,6 +59,12 @@ body {
 
 #message{
   margin-top: 50px;
+  letter-spacing: .8rem;
+  font-size: 3rem;
+  display: flex;
+  align-content: center;
+  font-family: 'Sonsie One', cursive;
+
 }
 
 #board {
@@ -66,11 +72,14 @@ body {
   grid-template-rows: repeat(6, 90px);
   grid-template-columns: repeat(7, 90px);
   margin: 0 auto;
-  height: 540px;
-  width: 630px;
-  background-color: blue;
-  border: 10px solid navy;
-  
+  height: 560px;
+  width: 650px;
+  border-radius: 5%;
+  border-left: 5px solid red;
+  border-bottom: 5px solid green;
+  border-right: 5px solid blue;
+  border-top: 5px solid black;
+  animation: pulse 2.5s ease-in infinite;
 }
 
 #board > div {
@@ -79,14 +88,18 @@ body {
   margin: 0 auto;
   height: 80px;
   width: 80px;
-  background-color: white;
+  background-image: none;
   border-radius: 50%;
   margin-top: 5px;
 }
 
 #resetBtn {
   margin: 0 auto;
-  margin-top : 10px;
+  margin-top : 20px;
+}
+
+#resetBtn:hover {
+  animation: pulse 0.5s ease-in infinite;
 }
 
 @media only screen and (min-width: 714px) { body {
@@ -96,17 +109,6 @@ body {
 }
 
 
-/* @keyframes colorChange {
-  to {
-      opacity: 1;
-  }
-  
-  from {
-      opacity: 1;
-      background-color: var(--bgColor);
-      
-  }
-} */
 
 
 

@@ -81,6 +81,7 @@ let board = Array(42).fill(null),
 const circleSpace = document.querySelectorAll("section > div");
 const topMessage = document.querySelector("#message");
 const reset = document.getElementById("resetBtn");
+const element = document.querySelector('.animate__animated animate__bounce');
 /*----------------------------- Event Listeners -----------------------------*/
 circleSpace.forEach((circle, index) =>
   circle.addEventListener("click", () => handleClick(index))
@@ -155,9 +156,9 @@ function switchPlayerTurn() {
 
 
 function updateMessage() {
-  topMessage.innerText = `It's ${turn > 0 ? "Red" : "Yellow"}s turn`;
+  topMessage.innerText = `PLAYER ${turn > 0 ? '🔴' : '🟡'}`;
   if (tie) topMessage.innerText = `Tie game`;
-  if (winner) topMessage.innerText = `${turn > 0 ? "Red" : "Yellow"} wins`;
+  if (winner) topMessage.innerText = `Player ${turn > 0 ? '🔴' : '🟡'} wins`;
 }
 
 
