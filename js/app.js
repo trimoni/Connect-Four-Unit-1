@@ -170,4 +170,3 @@ function render(index) {
   switchPlayerTurn();
   updateMessage();
 }
-

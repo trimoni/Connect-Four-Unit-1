@@ -2,12 +2,39 @@ html {
   box-sizing: border-box;
 }
 
+:root {
+  --bgColor: var(--bgColor);
+}
+
 body {
-  background-color: gray;
+  /* background-color: gray; */
+  /* background-color: var(--bgColor);
+  animation: colorChange 1.5s alternate infinite;
+  transition: background-color 0.5s ease; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E,#23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+}
+
+@keyframes change {
+  0% {
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
+}
+
+body {
+
 }
 
 #title, #message {
@@ -33,13 +60,32 @@ body {
   width: 80px;
   background-color: white;
   border-radius: 50%;
+  margin-top: 5px;
 }
 
 #resetBtn {
   margin: 0 auto;
+  margin-top : 10px;
+}
+
+@media only screen and (min-width: 714px) { body {
+  display: flex;
+  flex-direction: column;
+}
 }
 
 
+/* @keyframes colorChange {
+  to {
+      opacity: 1;
+  }
+  
+  from {
+      opacity: 1;
+      background-color: var(--bgColor);
+      
+  }
+} */
 
 
 
