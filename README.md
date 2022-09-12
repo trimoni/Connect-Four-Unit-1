@@ -1,6 +1,7 @@
 Connect-Four-Start
 # Colorful-Connect-Four
 
+![Connect Four](/assets/images/Connect-Four.jpg "Connect Four")
 
 Colorful Connect Four is a Connect Four re-creation! Circles on the board can be clicked in order to start the game, dropping the Red & Yellow piece to the bottom of the board. The main objective of the game is to get a four in a show of either a Red or Yellow circle in either a horizontal, vertical, or diagonal position. If the player achieves a four-in-a-row, they will win. If the game ends in a tie, the user can reset (which they can at any given point of time) the game and play again! 
 
