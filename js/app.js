@@ -75,7 +75,7 @@ const winningArrays = [
 const michaelNoises = new Audio("../audio/Mike-1.mp3");
 const backgroundNoise = new Audio("../audio/SlyDance2.mp3");
 const beatIt = new Audio("../audio/beat-it.mp3");
-const bad = new Audio('../audio/bad.mp3')
+const bad = new Audio("../audio/bad.mp3");
 /*---------------------------- Variables (state) ----------------------------*/
 let board = Array(42).fill(null),
   winner,
@@ -89,23 +89,21 @@ const reset = document.getElementById("resetBtn");
 const element = document.querySelector(".animate__animated animate__bounce");
 const otherSoundBoard = document.querySelector("#board");
 const danceSong = document.querySelector("#music");
-const favicon = document.querySelector('#favicon')
+const favicon = document.querySelector("#favicon");
 /*----------------------------- Event Listeners -----------------------------*/
 circleSpace.forEach(
   (circle, index) => circle.addEventListener("click", () => handleClick(index))
-  // we are clicking on a circle (div), the index is the value index of each circle (div).
-  // We are grabbing the index value from the circle (div) and we will move it around to other functions that will need to use it.
 );
 
 reset.addEventListener("click", init);
 
-danceSong.addEventListener("click", function() {
-  if(backgroundNoise.paused){
-    backgroundNoise.play()
-    danceSong.textContent = 'Pause'
-  } else{
-    backgroundNoise.pause()
-    danceSong.textContent = 'Play'
+danceSong.addEventListener("click", function () {
+  if (backgroundNoise.paused) {
+    backgroundNoise.play();
+    danceSong.textContent = "Pause";
+  } else {
+    backgroundNoise.pause();
+    danceSong.textContent = "Play";
   }
 });
 
@@ -115,8 +113,6 @@ otherSoundBoard.addEventListener("click", function (evt) {
   audioElement.volume = 0.5;
   audioElement.play();
 });
-
-// soundNoise.addEventListener()
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -130,7 +126,6 @@ function init() {
   for (let i = 0; i < circleSpace.length; i++) {
     circleSpace[i].style.backgroundColor = "white";
   }
-  // loop through the divs, and will give the index value of circleSpace a color of white for every new game/reset
   updateMessage();
 }
 
@@ -141,20 +136,15 @@ function playMusic() {
 
 function handleClick(index) {
   if (winner) return;
-  // if winner is false, keep playing the game
   render(index);
-  // as long as there isn't a winner, render function will activate
 }
 
 function getClassIndex(index) {
   const bottomArray = [6, 5, 4, 3, 2, 1, 0];
-  // this targets the bottom row
   let classIndex = bottomArray[index % 7];
   let boot = document.querySelector(`#sq${classIndex}`);
-  // the bottom row, each value is getting a divisible of 7
   let color = boot.style.backgroundColor;
   while (color === "red" || color === "yellow") {
-    // grabbing the sq id's in the bottom row
     classIndex += 7;
     boot = document.querySelector(`#sq${classIndex}`);
     color = boot.style.backgroundColor;
@@ -211,6 +201,9 @@ function render(index) {
   switchPlayerTurn();
   updateMessage();
 }
+
+
+// DISCO BALL FEATURE!
 
 var t = 1;
 var radius = 50;
