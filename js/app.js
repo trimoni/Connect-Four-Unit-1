@@ -72,7 +72,9 @@ const winningArrays = [
   [13, 20, 27, 34],
 ];
 
-const michaelNoises = new Audio("../audio/Mike-1.mp3");
+const michaelNoises = new Audio("../audio/Mike-1.mp3")
+
+// backgroundNoise = new Audio("../audio/SlyDance1.mp3")
 /*---------------------------- Variables (state) ----------------------------*/
 let board = Array(42).fill(null),
   winner,
@@ -97,7 +99,7 @@ reset.addEventListener("click", init);
 otherSoundBoard.addEventListener("click", function (evt) {
   const randomNum = Math.floor(Math.random() * 15 - 1 + 1);
   const audioElement = new Audio(`../audio/Mike-${randomNum}.mp3`);
-  audioElement.volume = 0.3;
+  audioElement.volume = 0.5;
   audioElement.play();
 });
 

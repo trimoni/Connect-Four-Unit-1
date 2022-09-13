@@ -27,3 +27,7 @@ Colorful Connect Four's animation on the board and reset button was taken from a
 Colorful Connect Four's Reset Button Color was taken from Bootstrap.com, which is licensed by MIT. Link can be found here [link](https://getbootstrap.com/)
 
 Colorful Connect Four's Sonsie One font for the h2 line was taken from Google Fonts, which can be found here [link](https://fonts.google.com/)
+
+Colorful Connect Four uses Michael Jackson Sound Bit audio whenever you click on a circle from [link](https://www.youtube.com/watch?v=e62M-5-7ajY&t=136s&ab_channel=KiedisEnvy)
+
+Colorful Connect Four has a background sound from Sly Cooper 2, called NightClub Theme [link](https://www.youtube.com/watch?v=nMaOPytadLU&t=251s&ab_channel=pikagirl123)
