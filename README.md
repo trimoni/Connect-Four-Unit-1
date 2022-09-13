@@ -42,3 +42,15 @@ Colorful Connect Four has a Disco Ball Effect written by Marty from Codepen - [l
 Colorful Connect Four has a rainbow border written by Morgane from Codepen - [link](https://codepen.io/unnegative/pen/dVwYBq)
 
 Colorful Connect Four has a disco ball favicon taken from vecteezy.com - [link](https://www.vecteezy.com/free-vector/disco-ball)
+
+## Ice Box ❆
+
+- [x] Sound
+- [ ] Dark Mode
+- [x] Font Design
+- [x] Disco Ball
+- [x] Winning Sound Effect
+- [x] Tie Sound Effect
+- [ ] Computer Opponent
+- [x] Background Sound
+- [x] Add functionality to have user win a combination of 4 through vertical, horizontal & diagonal methods
