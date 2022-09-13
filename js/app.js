@@ -84,8 +84,6 @@ const circleSpace = document.querySelectorAll("section > div");
 const topMessage = document.querySelector("#message");
 const reset = document.getElementById("resetBtn");
 const element = document.querySelector(".animate__animated animate__bounce");
-const soundBoard = document.querySelector("#board");
-
 const otherSoundBoard = document.querySelector("#board");
 /*----------------------------- Event Listeners -----------------------------*/
 circleSpace.forEach(
@@ -96,15 +94,10 @@ circleSpace.forEach(
 
 reset.addEventListener("click", init);
 
-// soundBoard.addEventListener('click', function(evt){
-//   michaelNoises.volume = .10
-//   michaelNoises.play()
-// })
-
 otherSoundBoard.addEventListener("click", function (evt) {
   const randomNum = Math.floor(Math.random() * 15 - 1 + 1);
   const audioElement = new Audio(`../audio/Mike-${randomNum}.mp3`);
-  audioElement.volume = 0.1;
+  audioElement.volume = 0.3;
   audioElement.play();
 });
 
