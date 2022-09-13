@@ -74,6 +74,8 @@ const winningArrays = [
 
 const michaelNoises = new Audio("../audio/Mike-1.mp3")
 
+const backgroundNoise = new Audio('../audio/SlyDance2.mp3')
+
 // backgroundNoise = new Audio("../audio/SlyDance1.mp3")
 /*---------------------------- Variables (state) ----------------------------*/
 let board = Array(42).fill(null),
@@ -87,6 +89,7 @@ const topMessage = document.querySelector("#message");
 const reset = document.getElementById("resetBtn");
 const element = document.querySelector(".animate__animated animate__bounce");
 const otherSoundBoard = document.querySelector("#board");
+const soundNoise = document.querySelector('html')
 /*----------------------------- Event Listeners -----------------------------*/
 circleSpace.forEach(
   (circle, index) => circle.addEventListener("click", () => handleClick(index))
@@ -103,6 +106,8 @@ otherSoundBoard.addEventListener("click", function (evt) {
   audioElement.play();
 });
 
+// soundNoise.addEventListener()
+
 /*-------------------------------- Functions --------------------------------*/
 
 init();
@@ -117,6 +122,8 @@ function init() {
   }
   // loop through the divs, and will give the index value of circleSpace a color of white for every new game/reset
   updateMessage();
+  backgroundNoise.play()
+  backgroundNoise.loop = true
 }
 
 function handleClick(index) {
