@@ -101,10 +101,10 @@ reset.addEventListener("click", init);
 danceSong.addEventListener("click", function() {
   if(backgroundNoise.paused){
     backgroundNoise.play()
-    danceSong.innerHTML = 'Pause'
+    danceSong.textContent = 'Pause'
   } else{
     backgroundNoise.pause()
-    danceSong.innerHTML = 'Play'
+    danceSong.textContent = 'Play'
   }
 });
 
