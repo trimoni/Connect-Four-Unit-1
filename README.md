@@ -1,7 +1,7 @@
 Connect-Four-Start
 # Colorful-Connect-Four
 
-![Connect Four](/assets/images/Connect-Four.jpg "Connect Four")
+![Connect Four](/assets/images/color-connect-four.jpg "Connect Four")
 
 Colorful Connect Four is a Connect Four re-creation! Circles on the board can be clicked in order to start the game, dropping the Red & Yellow piece to the bottom of the board. The main objective of the game is to get a four in a show of either a Red or Yellow circle in either a horizontal, vertical, or diagonal position. If the player achieves a four-in-a-row, they will win. If the game ends in a tie, the user can reset (which they can at any given point of time) the game and play again! 
 
@@ -31,6 +31,10 @@ Colorful Connect Four's Sonsie One font for the h2 line was taken from Google Fo
 Colorful Connect Four uses Michael Jackson Sound Bit audio whenever you click on a circle from [link](https://www.youtube.com/watch?v=e62M-5-7ajY&t=136s&ab_channel=KiedisEnvy)
 
 Colorful Connect Four has a background sound from Sly Cooper 2, called NightClub Theme [link](https://www.youtube.com/watch?v=nMaOPytadLU&t=251s&ab_channel=pikagirl123)
+
+Colorful Connect Four has a tie sound effect from Michael Jackson's Bad [link](https://www.youtube.com/watch?v=k-B2Uux-D-I&ab_channel=MichaelJayHD)
+
+Colorful Connect Four has a winning sound effect from Michael Jackson's Beat It [link](https://www.youtube.com/watch?v=a5JHrrVRmek&ab_channel=ThaynaAndradeAlvarenga)
 
 Colorful Connect Four has a Disco Ball Effect written by Marty from Codepen [link](https://codepen.io/msaetre/pen/eYwqrb)
 
