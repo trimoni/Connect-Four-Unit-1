@@ -40,3 +40,5 @@ Colorful Connect Four has a winning sound effect from Michael Jackson's Beat It 
 Colorful Connect Four has a Disco Ball Effect written by Marty from Codepen - [link](https://codepen.io/msaetre/pen/eYwqrb)
 
 Colorful Connect Four has a rainbow border written by Morgane from Codepen - [link](https://codepen.io/unnegative/pen/dVwYBq)
+
+Colorful Connect Four has a disco ball favicon taken from vecteezy.com - [link](https://www.vecteezy.com/free-vector/disco-ball)
