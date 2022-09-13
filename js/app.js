@@ -72,7 +72,7 @@ const winningArrays = [
   [13, 20, 27, 34],
 ];
 
-const michaelNoises = new Audio('../audio/Mike-1.mp3')
+const michaelNoises = new Audio("../audio/Mike-1.mp3");
 /*---------------------------- Variables (state) ----------------------------*/
 let board = Array(42).fill(null),
   winner,
@@ -83,31 +83,30 @@ let board = Array(42).fill(null),
 const circleSpace = document.querySelectorAll("section > div");
 const topMessage = document.querySelector("#message");
 const reset = document.getElementById("resetBtn");
-const element = document.querySelector('.animate__animated animate__bounce');
-const soundBoard = document.querySelector('#board')
+const element = document.querySelector(".animate__animated animate__bounce");
+const soundBoard = document.querySelector("#board");
 
-const otherSoundBoard = document.querySelector('#board')
+const otherSoundBoard = document.querySelector("#board");
 /*----------------------------- Event Listeners -----------------------------*/
-circleSpace.forEach((circle, index) =>
-  circle.addEventListener("click", () => handleClick(index))
+circleSpace.forEach(
+  (circle, index) => circle.addEventListener("click", () => handleClick(index))
   // we are clicking on a circle (div), the index is the value index of each circle (div).
   // We are grabbing the index value from the circle (div) and we will move it around to other functions that will need to use it.
 );
 
 reset.addEventListener("click", init);
 
-soundBoard.addEventListener('click', function(evt){
-  michaelNoises.volume = .10
-  michaelNoises.play()
-})
+// soundBoard.addEventListener('click', function(evt){
+//   michaelNoises.volume = .10
+//   michaelNoises.play()
+// })
 
-otherSoundBoard.addEventListener('click', function(evt){
-  if (evt.target.id === 'board'){
-    const audioElement = new Audio(`../audio/${evt.target.id}.mp3`)
-    audioElement.volume = .10
-    audioElement.play()
-  }
-})
+otherSoundBoard.addEventListener("click", function (evt) {
+  const randomNum = Math.floor(Math.random() * 15 - 1 + 1);
+  const audioElement = new Audio(`../audio/Mike-${randomNum}.mp3`);
+  audioElement.volume = 0.1;
+  audioElement.play();
+});
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -172,14 +171,11 @@ function switchPlayerTurn() {
   if (winner === false) turn *= -1;
 }
 
-
 function updateMessage() {
-  topMessage.innerText = `PLAYER ${turn > 0 ? '🔴' : '🟡'}`;
+  topMessage.innerText = `PLAYER ${turn > 0 ? "🔴" : "🟡"}`;
   if (tie) topMessage.innerText = `Tie game`;
-  if (winner) topMessage.innerText = `Player ${turn > 0 ? '🔴' : '🟡'} wins`;
+  if (winner) topMessage.innerText = `Player ${turn > 0 ? "🔴" : "🟡"} wins`;
 }
-
-
 
 function render(index) {
   const classIndex = getClassIndex(index);
