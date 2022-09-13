@@ -33,3 +33,5 @@ Colorful Connect Four uses Michael Jackson Sound Bit audio whenever you click on
 Colorful Connect Four has a background sound from Sly Cooper 2, called NightClub Theme [link](https://www.youtube.com/watch?v=nMaOPytadLU&t=251s&ab_channel=pikagirl123)
 
 Colorful Connect Four has a Disco Ball Effect written by Marty from Codepen [link](https://codepen.io/msaetre/pen/eYwqrb)
+
+Colorful Connect Four has a rainbow border written by Morgane from Codepen [link](https://codepen.io/unnegative/pen/dVwYBq)

@@ -71,11 +71,16 @@ body {
   height: 560px;
   width: 650px;
   border-radius: 5%;
-  border-left: 5px solid red;
-  border-bottom: 5px solid green;
-  border-right: 5px solid blue;
-  border-top: 5px solid black;
   animation: pulse 2.5s ease-in infinite;
+}
+
+#board {
+  border: 5px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
+  margin: 0 auto;
+  height: 560px;
+  width: 650px;
 }
 
 #board > div {
@@ -119,10 +124,8 @@ html {
 }
 
 body {
-  /* background-color: #333;
-  background: -webkit-linear-gradient(bottom left, #111, #222);
-  background: -moz-linear-gradient(bottom left, #111, #222);
-  background: linear-gradient(bottom left, #111, #222); */
+  -webkit-perspective: 500px; 
+  perspective: 500px;
   margin: 0;
 }
 
@@ -211,6 +214,7 @@ a {
   bottom: 12px;
   right: 20px;
 }
+
 
 
 

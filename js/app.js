@@ -98,7 +98,15 @@ circleSpace.forEach(
 
 reset.addEventListener("click", init);
 
-danceSong.addEventListener("click", playMusic);
+danceSong.addEventListener("click", function() {
+  if(backgroundNoise.paused){
+    backgroundNoise.play()
+    danceSong.innerHTML = 'Pause'
+  } else{
+    backgroundNoise.pause()
+    danceSong.innerHTML = 'Play'
+  }
+});
 
 otherSoundBoard.addEventListener("click", function (evt) {
   const randomNum = Math.floor(Math.random() * 15 - 1 + 1);
