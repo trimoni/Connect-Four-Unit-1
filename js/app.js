@@ -75,6 +75,7 @@ const winningArrays = [
 const michaelNoises = new Audio("../audio/Mike-1.mp3");
 const backgroundNoise = new Audio("../audio/SlyDance2.mp3");
 const beatIt = new Audio("../audio/beat-it.mp3");
+const bad = new Audio('../audio/bad.mp3')
 /*---------------------------- Variables (state) ----------------------------*/
 let board = Array(42).fill(null),
   winner,
@@ -178,12 +179,17 @@ function switchPlayerTurn() {
 
 function updateMessage() {
   topMessage.innerText = `PLAYER ${turn > 0 ? "🔴" : "🟡"}`;
-  if (tie) topMessage.innerText = `Tie game`;
+  if (tie) {
+    topMessage.innerText = `Tie game`;
+    setTimeout(function () {
+      bad.play();
+    }, 0500);
+  }
   if (winner) {
     topMessage.innerText = `Player ${turn > 0 ? "🔴" : "🟡"} wins`;
     setTimeout(function () {
       beatIt.play();
-    }, 1000);
+    }, 0500);
   }
 }
 
