@@ -72,11 +72,9 @@ const winningArrays = [
   [13, 20, 27, 34],
 ];
 
-const michaelNoises = new Audio("../audio/Mike-1.mp3")
-
-const backgroundNoise = new Audio('../audio/SlyDance2.mp3')
-
-// backgroundNoise = new Audio("../audio/SlyDance1.mp3")
+const michaelNoises = new Audio("../audio/Mike-1.mp3");
+const backgroundNoise = new Audio("../audio/SlyDance2.mp3");
+const beatIt = new Audio("../audio/beat-it.mp3");
 /*---------------------------- Variables (state) ----------------------------*/
 let board = Array(42).fill(null),
   winner,
@@ -89,7 +87,7 @@ const topMessage = document.querySelector("#message");
 const reset = document.getElementById("resetBtn");
 const element = document.querySelector(".animate__animated animate__bounce");
 const otherSoundBoard = document.querySelector("#board");
-const soundNoise = document.querySelector('html')
+const danceSong = document.querySelector("#music");
 /*----------------------------- Event Listeners -----------------------------*/
 circleSpace.forEach(
   (circle, index) => circle.addEventListener("click", () => handleClick(index))
@@ -98,6 +96,8 @@ circleSpace.forEach(
 );
 
 reset.addEventListener("click", init);
+
+danceSong.addEventListener("click", playMusic);
 
 otherSoundBoard.addEventListener("click", function (evt) {
   const randomNum = Math.floor(Math.random() * 15 - 1 + 1);
@@ -122,8 +122,11 @@ function init() {
   }
   // loop through the divs, and will give the index value of circleSpace a color of white for every new game/reset
   updateMessage();
-  backgroundNoise.play()
-  backgroundNoise.loop = true
+}
+
+function playMusic() {
+  backgroundNoise.play();
+  backgroundNoise.loop = true;
 }
 
 function handleClick(index) {
@@ -176,7 +179,12 @@ function switchPlayerTurn() {
 function updateMessage() {
   topMessage.innerText = `PLAYER ${turn > 0 ? "🔴" : "🟡"}`;
   if (tie) topMessage.innerText = `Tie game`;
-  if (winner) topMessage.innerText = `Player ${turn > 0 ? "🔴" : "🟡"} wins`;
+  if (winner) {
+    topMessage.innerText = `Player ${turn > 0 ? "🔴" : "🟡"} wins`;
+    setTimeout(function () {
+      beatIt.play();
+    }, 1000);
+  }
 }
 
 function render(index) {
@@ -194,25 +202,30 @@ var radius = 50;
 var squareSize = 6.5;
 var prec = 19.55;
 var fuzzy = 0.001;
-var inc = (Math.PI-fuzzy)/prec;
+var inc = (Math.PI - fuzzy) / prec;
 var discoBall = document.getElementById("discoBall");
 
-for(var t=fuzzy; t<Math.PI; t+=inc) {
+for (var t = fuzzy; t < Math.PI; t += inc) {
   var z = radius * Math.cos(t);
-  var currentRadius = Math.abs((radius * Math.cos(0) * Math.sin(t)) - (radius * Math.cos(Math.PI) * Math.sin(t))) / 2.5;
+  var currentRadius =
+    Math.abs(
+      radius * Math.cos(0) * Math.sin(t) -
+        radius * Math.cos(Math.PI) * Math.sin(t)
+    ) / 2.5;
   var circumference = Math.abs(2 * Math.PI * currentRadius);
   var squaresThatFit = Math.floor(circumference / squareSize);
-  var angleInc = (Math.PI*2-fuzzy) / squaresThatFit;
-  for(var i=angleInc/2+fuzzy; i<(Math.PI*2); i+=angleInc) {
+  var angleInc = (Math.PI * 2 - fuzzy) / squaresThatFit;
+  for (var i = angleInc / 2 + fuzzy; i < Math.PI * 2; i += angleInc) {
     var square = document.createElement("div");
     var squareTile = document.createElement("div");
     squareTile.style.width = squareSize + "px";
     squareTile.style.height = squareSize + "px";
     squareTile.style.transformOrigin = "0 0 0";
     squareTile.style.webkitTransformOrigin = "0 0 0";
-    squareTile.style.webkitTransform = "rotate(" + i + "rad) rotateY(" + t + "rad)";
+    squareTile.style.webkitTransform =
+      "rotate(" + i + "rad) rotateY(" + t + "rad)";
     squareTile.style.transform = "rotate(" + i + "rad) rotateY(" + t + "rad)";
-    if((t>1.3 && t<1.9) || (t<-1.3 && t>-1.9)) {
+    if ((t > 1.3 && t < 1.9) || (t < -1.3 && t > -1.9)) {
       squareTile.style.backgroundColor = randomColor("bright");
     } else {
       squareTile.style.backgroundColor = randomColor("any");
@@ -220,21 +233,30 @@ for(var t=fuzzy; t<Math.PI; t+=inc) {
     square.appendChild(squareTile);
     square.className = "square";
     squareTile.style.webkitAnimation = "reflect 2s linear infinite";
-    squareTile.style.webkitAnimationDelay = String(randomNumber(0,20)/10) + "s";
+    squareTile.style.webkitAnimationDelay =
+      String(randomNumber(0, 20) / 10) + "s";
     squareTile.style.animation = "reflect 2s linear infinite";
-    squareTile.style.animationDelay = String(randomNumber(0,20)/10) + "s";
+    squareTile.style.animationDelay = String(randomNumber(0, 20) / 10) + "s";
     squareTile.style.backfaceVisibility = "hidden";
     var x = radius * Math.cos(i) * Math.sin(t);
     var y = radius * Math.sin(i) * Math.sin(t);
-    square.style.webkitTransform = "translateX(" + Math.ceil(x) + "px) translateY(" + y + "px) translateZ(" + z + "px)";
-    square.style.transform = "translateX(" + x + "px) translateY(" + y + "px) translateZ(" + z + "px)";
+    square.style.webkitTransform =
+      "translateX(" +
+      Math.ceil(x) +
+      "px) translateY(" +
+      y +
+      "px) translateZ(" +
+      z +
+      "px)";
+    square.style.transform =
+      "translateX(" + x + "px) translateY(" + y + "px) translateZ(" + z + "px)";
     discoBall.appendChild(square);
   }
 }
 
 function randomColor(type) {
   var c;
-  if(type == "bright") {
+  if (type == "bright") {
     c = randomNumber(130, 255);
   } else {
     c = randomNumber(110, 190);

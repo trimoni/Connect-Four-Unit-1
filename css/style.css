@@ -7,10 +7,6 @@ html {
 }
 
 body {
-  /* background-color: gray; */
-  /* background-color: var(--bgColor);
-  animation: colorChange 1.5s alternate infinite;
-  transition: background-color 0.5s ease; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,6 +94,15 @@ body {
   margin-top : 20px;
 }
 
+#music {
+  margin: 0 auto;
+  margin-top : 20px;
+}
+
+#music:hover {
+  animation: pulse 0.5s ease-in infinite;
+}
+
 #resetBtn:hover {
   animation: pulse 0.5s ease-in infinite;
 }
@@ -156,8 +161,8 @@ body {
 #discoBall {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  width: 600px;
-  height: 400px;
+  width: 800px;
+  height: 450px;
   position: absolute;
   top: 50px;
   margin-top: 200px;
