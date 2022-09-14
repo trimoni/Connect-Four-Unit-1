@@ -54,3 +54,4 @@ Colorful Connect Four has a disco ball favicon taken from vecteezy.com - [link](
 - [ ] Computer Opponent
 - [x] Background Sound
 - [x] Add functionality to have user win a combination of 4 through vertical, horizontal & diagonal methods
+- [x] Add a Favicon

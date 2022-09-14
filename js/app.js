@@ -76,6 +76,7 @@ const michaelNoises = new Audio("../audio/Mike-1.mp3");
 const backgroundNoise = new Audio("../audio/SlyDance2.mp3");
 const beatIt = new Audio("../audio/beat-it.mp3");
 const bad = new Audio("../audio/bad.mp3");
+
 /*---------------------------- Variables (state) ----------------------------*/
 let board = Array(42).fill(null),
   winner,
@@ -202,30 +203,29 @@ function render(index) {
   updateMessage();
 }
 
-
 // DISCO BALL FEATURE!
 
-var t = 1;
-var radius = 50;
-var squareSize = 6.5;
-var prec = 19.55;
-var fuzzy = 0.001;
-var inc = (Math.PI - fuzzy) / prec;
-var discoBall = document.getElementById("discoBall");
+let t = 1;
+let radius = 50;
+let squareSize = 6.5;
+let prec = 19.55;
+let fuzzy = 0.001;
+let inc = (Math.PI - fuzzy) / prec;
+let discoBall = document.getElementById("discoBall");
 
-for (var t = fuzzy; t < Math.PI; t += inc) {
-  var z = radius * Math.cos(t);
-  var currentRadius =
+for (let t = fuzzy; t < Math.PI; t += inc) {
+  let z = radius * Math.cos(t);
+  let currentRadius =
     Math.abs(
       radius * Math.cos(0) * Math.sin(t) -
         radius * Math.cos(Math.PI) * Math.sin(t)
     ) / 2.5;
-  var circumference = Math.abs(2 * Math.PI * currentRadius);
-  var squaresThatFit = Math.floor(circumference / squareSize);
-  var angleInc = (Math.PI * 2 - fuzzy) / squaresThatFit;
-  for (var i = angleInc / 2 + fuzzy; i < Math.PI * 2; i += angleInc) {
-    var square = document.createElement("div");
-    var squareTile = document.createElement("div");
+  let circumference = Math.abs(2 * Math.PI * currentRadius);
+  let squaresThatFit = Math.floor(circumference / squareSize);
+  let angleInc = (Math.PI * 2 - fuzzy) / squaresThatFit;
+  for (let i = angleInc / 2 + fuzzy; i < Math.PI * 2; i += angleInc) {
+    let square = document.createElement("div");
+    let squareTile = document.createElement("div");
     squareTile.style.width = squareSize + "px";
     squareTile.style.height = squareSize + "px";
     squareTile.style.transformOrigin = "0 0 0";
@@ -246,8 +246,8 @@ for (var t = fuzzy; t < Math.PI; t += inc) {
     squareTile.style.animation = "reflect 2s linear infinite";
     squareTile.style.animationDelay = String(randomNumber(0, 20) / 10) + "s";
     squareTile.style.backfaceVisibility = "hidden";
-    var x = radius * Math.cos(i) * Math.sin(t);
-    var y = radius * Math.sin(i) * Math.sin(t);
+    let x = radius * Math.cos(i) * Math.sin(t);
+    let y = radius * Math.sin(i) * Math.sin(t);
     square.style.webkitTransform =
       "translateX(" +
       Math.ceil(x) +
@@ -263,7 +263,7 @@ for (var t = fuzzy; t < Math.PI; t += inc) {
 }
 
 function randomColor(type) {
-  var c;
+  let c;
   if (type == "bright") {
     c = randomNumber(130, 255);
   } else {
