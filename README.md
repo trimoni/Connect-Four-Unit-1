@@ -16,19 +16,19 @@ Colorful Connect Four is a Connect Four re-creation! Circles on the board can be
 
 ## Credits:
 
-Colorful Connect Four uses a smooth background transition method that was taken from Julio Codes on Youtube which can be found here - [link](https://www.youtube.com/watch?v=fBRzD6dwJfw&ab_channel=JulioCodes)
+Colorful Connect Four uses a smooth background transition method that was utilized from Julio Codes on Youtube - [link](https://www.youtube.com/watch?v=fBRzD6dwJfw&ab_channel=JulioCodes)
 
-Colorful Connect Four's Main Title font and style was taken from Alvaro on Codepen.com which can be found here - [link](https://codepen.io/alvarotrigo/pen/xxLvyOG)
+Colorful Connect Four's Main Title font and style was utilized from Alvaro on Codepen.com - [link](https://codepen.io/alvarotrigo/pen/xxLvyOG)
 
-Colorful Connect Four's winningArray's combonations was taken from Ania Kubow's Connect Four project on github which can be found here - [link](https://github.com/kubowania/connect-four)
+Colorful Connect Four's winningArray's combonations was utilized from Ania Kubow's Connect Four project on github.com - [link](https://github.com/kubowania/connect-four)
 
-Colorful Connect Four's animation on the board and reset button was taken from animate.css, created by Daniel Eden, Elton Mesquita, and Waren Gonzagawhich. The link can be found here - [link](https://animate.style/)
+Colorful Connect Four's animation on the board and reset button was utilized from animate.css, created by Daniel Eden, Elton Mesquita, and Waren Gonzagawhich - [link](https://animate.style/)
 
-Colorful Connect Four's Reset Button Color was taken from Bootstrap.com, which is licensed by MIT. Link can be found here - [link](https://getbootstrap.com/)
+Colorful Connect Four's Reset Button Color was utilized from Bootstrap.com, which is licensed by MIT - [link](https://getbootstrap.com/)
 
-Colorful Connect Four's Sonsie One font for the h2 line was taken from Google Fonts, which can be found here - [link](https://fonts.google.com/)
+Colorful Connect Four's Sonsie One font for the h2 line was utilized from Google Fonts - [link](https://fonts.google.com/)
 
-Colorful Connect Four uses Michael Jackson Sound Bit audio whenever you click on a circle from - [link](https://www.youtube.com/watch?v=e62M-5-7ajY&t=136s&ab_channel=KiedisEnvy)
+Colorful Connect Four uses Michael Jackson Sound Bits audio whenever you click on a circle - [link](https://www.youtube.com/watch?v=e62M-5-7ajY&t=136s&ab_channel=KiedisEnvy)
 
 Colorful Connect Four has a background sound from Sly Cooper 2, called NightClub Theme - [link](https://www.youtube.com/watch?v=nMaOPytadLU&t=251s&ab_channel=pikagirl123)
 
@@ -40,7 +40,7 @@ Colorful Connect Four has a Disco Ball Effect written by Marty from Codepen - [l
 
 Colorful Connect Four has a rainbow border written by Morgane from Codepen - [link](https://codepen.io/unnegative/pen/dVwYBq)
 
-Colorful Connect Four has a disco ball favicon taken from vecteezy.com - [link](https://www.vecteezy.com/free-vector/disco-ball)
+Colorful Connect Four has a disco ball favicon utilized from vecteezy.com - [link](https://www.vecteezy.com/free-vector/disco-ball)
 
 ## Ice Box ❆
 
