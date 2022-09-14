@@ -180,13 +180,13 @@ function switchPlayerTurn() {
 function updateMessage() {
   topMessage.innerText = `PLAYER ${turn > 0 ? "🔴" : "🟡"}`;
   if (tie) {
-    topMessage.innerText = `Tie game`;
+    topMessage.innerText = `Tied: Burn Baby Burn`;
     setTimeout(function () {
       bad.play();
     }, 0500);
   }
   if (winner) {
-    topMessage.innerText = `Player ${turn > 0 ? "🔴" : "🟡"} wins`;
+    topMessage.innerText = `Player ${turn > 0 ? "🔴" : "🟡"} Dazzles`;
     setTimeout(function () {
       beatIt.play();
     }, 0500);
