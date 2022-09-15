@@ -92,8 +92,8 @@ const otherSoundBoard = document.querySelector("#board");
 const danceSong = document.querySelector("#music");
 const favicon = document.querySelector("#favicon");
 /*----------------------------- Event Listeners -----------------------------*/
-circleSpace.forEach(
-  (circle, index) => circle.addEventListener("click", () => handleClick(index))
+circleSpace.forEach((circle, index) =>
+  circle.addEventListener("click", () => handleClick(index))
 );
 
 reset.addEventListener("click", init);
