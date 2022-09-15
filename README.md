@@ -16,7 +16,7 @@ Colorful Connect Four is a Connect Four re-creation! The board is built with 6 r
 
 ## Credits:
 
-#### Music Credits:
+### Music Credits:
 
 Colorful Connect Four uses Michael Jackson Sound Bits audio whenever you click on a circle - [link](https://www.youtube.com/watch?v=e62M-5-7ajY&t=136s&ab_channel=KiedisEnvy)
 
@@ -26,7 +26,7 @@ Colorful Connect Four has a tie sound effect from Michael Jackson's Bad [link](h
 
 Colorful Connect Four has a winning sound effect from Michael Jackson's Beat It - [link](https://www.youtube.com/watch?v=a5JHrrVRmek&ab_channel=ThaynaAndradeAlvarenga)
 
-#### Styling Credits:
+### Styling Credits:
 
 Colorful Connect Four uses a smooth background transition method that was utilized from Julio Codes on Youtube - [link](https://www.youtube.com/watch?v=fBRzD6dwJfw&ab_channel=JulioCodes)
 
