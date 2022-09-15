@@ -119,11 +119,29 @@ body {
   margin-top: 20px;
 }
 
+#music2 {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+#music3 {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
 #music:hover {
   animation: pulse 0.5s ease-in infinite;
 }
 
 #resetBtn:hover {
+  animation: pulse 0.5s ease-in infinite;
+}
+
+#music2:hover {
+  animation: pulse 0.5s ease-in infinite;
+}
+
+#music3:hover {
   animation: pulse 0.5s ease-in infinite;
 }
 

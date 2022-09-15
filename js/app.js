@@ -76,6 +76,8 @@ const michaelNoises = new Audio("../audio/Mike-1.mp3");
 const backgroundNoise = new Audio("../audio/SlyDance2.mp3");
 const beatIt = new Audio("../audio/beat-it.mp3");
 const bad = new Audio("../audio/bad.mp3");
+const noiseTwo = new Audio('../audio/MirorB.mp3')
+const noiseThree = new Audio('../audio/ratchet.mp3')
 
 /*---------------------------- Variables (state) ----------------------------*/
 let board = Array(42).fill(null),
@@ -90,6 +92,8 @@ const reset = document.getElementById("resetBtn");
 const element = document.querySelector(".animate__animated animate__bounce");
 const otherSoundBoard = document.querySelector("#board");
 const danceSong = document.querySelector("#music");
+const danceSongTwo = document.querySelector('#music2')
+const danceSongThree = document.querySelector('#music3')
 const favicon = document.querySelector("#favicon");
 /*----------------------------- Event Listeners -----------------------------*/
 circleSpace.forEach((circle, index) =>
@@ -104,9 +108,32 @@ danceSong.addEventListener("click", function () {
     danceSong.textContent = "Pause";
   } else {
     backgroundNoise.pause();
-    danceSong.textContent = "Play";
+    danceSong.textContent = "Chill";
   }
 });
+
+danceSongTwo.addEventListener('click', function() {
+  if (noiseTwo.paused) {
+    noiseTwo.play();
+    danceSongTwo.textContent = "Pause";
+  } else {
+    noiseTwo.pause();
+    danceSongTwo.textContent = "Groove";
+    danceSongTwo.volume = 0.2
+  }
+})
+
+danceSongThree.addEventListener("click", function () {
+  if (noiseThree.paused) {
+    noiseThree.play();
+    danceSongThree.textContent = "Pause";
+  } else {
+    noiseThree.pause();
+    danceSongThree.textContent = "Boogie";
+  }
+});
+
+
 
 otherSoundBoard.addEventListener("click", function (evt) {
   const randomNum = Math.floor(Math.random() * 15 - 1 + 1);
@@ -133,6 +160,8 @@ function init() {
 function playMusic() {
   backgroundNoise.play();
   backgroundNoise.loop = true;
+  noiseTwo.play()
+  noiseTwo.loop = true
 }
 
 function handleClick(index) {
@@ -180,13 +209,13 @@ function switchPlayerTurn() {
 function updateMessage() {
   topMessage.innerText = `PLAYER ${turn > 0 ? "🔴" : "🟡"}`;
   if (tie) {
-    topMessage.innerText = `Tied: Burn Baby Burn`;
+    topMessage.innerText = `You Know You're BAD`;
     setTimeout(function () {
       bad.play();
     }, 0500);
   }
   if (winner) {
-    topMessage.innerText = `Player ${turn > 0 ? "🔴" : "🟡"} Dazzles`;
+    topMessage.innerText = `Player ${turn > 0 ? "🔴" : "🟡"} BEAT IT`;
     setTimeout(function () {
       beatIt.play();
     }, 0500);
