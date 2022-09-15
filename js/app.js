@@ -110,6 +110,7 @@ danceSong.addEventListener("click", function () {
     backgroundNoise.pause();
     danceSong.textContent = "Chill";
   }
+  backgroundNoise.volume = 0.7
 });
 
 danceSongTwo.addEventListener('click', function() {
@@ -119,8 +120,8 @@ danceSongTwo.addEventListener('click', function() {
   } else {
     noiseTwo.pause();
     danceSongTwo.textContent = "Groove";
-    danceSongTwo.volume = 0.2
   }
+  noiseTwo.volume = 0.7
 })
 
 danceSongThree.addEventListener("click", function () {
@@ -131,6 +132,7 @@ danceSongThree.addEventListener("click", function () {
     noiseThree.pause();
     danceSongThree.textContent = "Boogie";
   }
+  noiseThree.volume = 0.5
 });
 
 
@@ -162,6 +164,8 @@ function playMusic() {
   backgroundNoise.loop = true;
   noiseTwo.play()
   noiseTwo.loop = true
+  noiseThree.play()
+  noiseThree.loop = true
 }
 
 function handleClick(index) {
