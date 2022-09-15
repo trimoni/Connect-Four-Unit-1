@@ -20,11 +20,15 @@ Colorful Connect Four is a Connect Four re-creation! The board is built with 6 r
 
 Colorful Connect Four uses Michael Jackson Sound Bits audio whenever you click on a circle - [link](https://www.youtube.com/watch?v=e62M-5-7ajY&t=136s&ab_channel=KiedisEnvy)
 
-Colorful Connect Four has a background sound from Sly Cooper 2, called NightClub Theme - [link](https://www.youtube.com/watch?v=nMaOPytadLU&t=251s&ab_channel=pikagirl123)
-
 Colorful Connect Four has a tie sound effect from Michael Jackson's Bad [link](https://www.youtube.com/watch?v=k-B2Uux-D-I&ab_channel=MichaelJayHD)
 
 Colorful Connect Four has a winning sound effect from Michael Jackson's Beat It - [link](https://www.youtube.com/watch?v=a5JHrrVRmek&ab_channel=ThaynaAndradeAlvarenga)
+
+Colorful Connect Four has a background sound when you click the Chill Button from Sly Cooper 2, called NightClub Theme - [link](https://www.youtube.com/watch?v=nMaOPytadLU&t=251s&ab_channel=pikagirl123)
+
+Colorful Connect Four has a background sound when you click the Groove Button from Pokemon: XD Gales of Darkness, called Miror B Battle - [link](https://www.youtube.com/watch?v=WuhqoZvyntA&ab_channel=L)
+
+Colorful Connect Four has a background sound when you click the Boogie Button from Ratchet & Clank: Crack in Time, called Groovitron - Electro Boost - [link](https://www.youtube.com/watch?v=uzS_cbbImR8&ab_channel=Yukimura570)
 
 ### Styling Credits:
 
