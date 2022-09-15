@@ -89,7 +89,6 @@ let board = Array(42).fill(null),
 const circleSpace = document.querySelectorAll("section > div");
 const topMessage = document.querySelector("#message");
 const reset = document.getElementById("resetBtn");
-const element = document.querySelector(".animate__animated animate__bounce");
 const otherSoundBoard = document.querySelector("#board");
 const danceSong = document.querySelector("#music");
 const danceSongTwo = document.querySelector("#music2");
@@ -135,7 +134,7 @@ danceSongThree.addEventListener("click", function () {
   noiseThree.volume = 0.5;
 });
 
-otherSoundBoard.addEventListener("click", function (evt) {
+otherSoundBoard.addEventListener("click", function () {
   const randomNum = Math.floor(Math.random() * 15 - 1 + 1);
   const audioElement = new Audio(`../audio/Mike-${randomNum}.mp3`);
   audioElement.volume = 0.5;
