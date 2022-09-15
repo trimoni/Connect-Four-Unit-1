@@ -76,8 +76,8 @@ const michaelNoises = new Audio("../audio/Mike-1.mp3");
 const backgroundNoise = new Audio("../audio/SlyDance2.mp3");
 const beatIt = new Audio("../audio/beat-it.mp3");
 const bad = new Audio("../audio/bad.mp3");
-const noiseTwo = new Audio('../audio/MirorB.mp3')
-const noiseThree = new Audio('../audio/ratchet.mp3')
+const noiseTwo = new Audio("../audio/MirorB.mp3");
+const noiseThree = new Audio("../audio/ratchet.mp3");
 
 /*---------------------------- Variables (state) ----------------------------*/
 let board = Array(42).fill(null),
@@ -92,8 +92,8 @@ const reset = document.getElementById("resetBtn");
 const element = document.querySelector(".animate__animated animate__bounce");
 const otherSoundBoard = document.querySelector("#board");
 const danceSong = document.querySelector("#music");
-const danceSongTwo = document.querySelector('#music2')
-const danceSongThree = document.querySelector('#music3')
+const danceSongTwo = document.querySelector("#music2");
+const danceSongThree = document.querySelector("#music3");
 const favicon = document.querySelector("#favicon");
 /*----------------------------- Event Listeners -----------------------------*/
 circleSpace.forEach((circle, index) =>
@@ -110,10 +110,10 @@ danceSong.addEventListener("click", function () {
     backgroundNoise.pause();
     danceSong.textContent = "Chill";
   }
-  backgroundNoise.volume = 0.7
+  backgroundNoise.volume = 0.7;
 });
 
-danceSongTwo.addEventListener('click', function() {
+danceSongTwo.addEventListener("click", function () {
   if (noiseTwo.paused) {
     noiseTwo.play();
     danceSongTwo.textContent = "Pause";
@@ -121,8 +121,8 @@ danceSongTwo.addEventListener('click', function() {
     noiseTwo.pause();
     danceSongTwo.textContent = "Groove";
   }
-  noiseTwo.volume = 0.7
-})
+  noiseTwo.volume = 0.7;
+});
 
 danceSongThree.addEventListener("click", function () {
   if (noiseThree.paused) {
@@ -132,10 +132,8 @@ danceSongThree.addEventListener("click", function () {
     noiseThree.pause();
     danceSongThree.textContent = "Boogie";
   }
-  noiseThree.volume = 0.5
+  noiseThree.volume = 0.5;
 });
-
-
 
 otherSoundBoard.addEventListener("click", function (evt) {
   const randomNum = Math.floor(Math.random() * 15 - 1 + 1);
@@ -162,10 +160,10 @@ function init() {
 function playMusic() {
   backgroundNoise.play();
   backgroundNoise.loop = true;
-  noiseTwo.play()
-  noiseTwo.loop = true
-  noiseThree.play()
-  noiseThree.loop = true
+  noiseTwo.play();
+  noiseTwo.loop = true;
+  noiseThree.play();
+  noiseThree.loop = true;
 }
 
 function handleClick(index) {
