@@ -72,7 +72,6 @@ const winningArrays = [
   [13, 20, 27, 34],
 ];
 
-const michaelNoises = new Audio("../audio/Mike-1.mp3");
 const backgroundNoise = new Audio("../audio/SlyDance2.mp3");
 const beatIt = new Audio("../audio/beat-it.mp3");
 const bad = new Audio("../audio/bad.mp3");
@@ -89,7 +88,7 @@ let board = Array(42).fill(null),
 const circleSpace = document.querySelectorAll("section > div");
 const topMessage = document.querySelector("#message");
 const reset = document.getElementById("resetBtn");
-const otherSoundBoard = document.querySelector("#board");
+const otherMichaelSounds = document.querySelector("#board");
 const danceSong = document.querySelector("#music");
 const danceSongTwo = document.querySelector("#music2");
 const danceSongThree = document.querySelector("#music3");
@@ -134,7 +133,7 @@ danceSongThree.addEventListener("click", function () {
   noiseThree.volume = 0.5;
 });
 
-otherSoundBoard.addEventListener("click", function () {
+otherMichaelSounds.addEventListener("click", function () {
   const randomNum = Math.floor(Math.random() * 15 - 1 + 1);
   const audioElement = new Audio(`../audio/Mike-${randomNum}.mp3`);
   audioElement.volume = 0.5;
@@ -173,12 +172,12 @@ function handleClick(index) {
 function getClassIndex(index) {
   const bottomArray = [6, 5, 4, 3, 2, 1, 0];
   let classIndex = bottomArray[index % 7];
-  let boot = document.querySelector(`#sq${classIndex}`);
-  let color = boot.style.backgroundColor;
+  let array = document.querySelector(`#sq${classIndex}`);
+  let color = array.style.backgroundColor;
   while (color === "red" || color === "yellow") {
     classIndex += 7;
-    boot = document.querySelector(`#sq${classIndex}`);
-    color = boot.style.backgroundColor;
+    array = document.querySelector(`#sq${classIndex}`);
+    color = array.style.backgroundColor;
   }
   return classIndex;
 }
